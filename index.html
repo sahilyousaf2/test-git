@@ -1,13 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
-    <link rel="stylesheet" href="style.css"></link>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BrightWave — Digital Agency</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <script src="app.js"></script>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">BrightWave</a>
+      <nav class="nav" id="primary-nav" aria-label="Primary" aria-hidden="true">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="btn btn-ghost">Contact</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7H20M4 12H20M4 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+    <!-- Off-canvas overlay for mobile nav -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h1 class="reveal">We build digital experiences that grow brands.</h1>
+          <p class="lead reveal">Design, development, and strategy—packaged into smart, measurable products that convert.</p>
+          <div class="hero-ctas reveal">
+            <a href="#contact" class="btn btn-primary">Get a Quote</a>
+            <a href="#work" class="btn btn-outline">See Our Work</a>
+          </div>
+          <ul class="stats reveal">
+            <li><strong>240+</strong><span>Projects</span></li>
+            <li><strong>120%</strong><span>Avg Growth</span></li>
+            <li><strong>10</strong><span>Years</span></li>
+          </ul>
+        </div>
+        <div class="hero-media reveal" aria-hidden="true">
+          <!-- nicer decorative composition -->
+          <div class="device-mock">
+            <svg viewBox="0 0 600 420" class="device-svg" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="lg" x1="0" x2="1">
+                  <stop offset="0" stop-color="#6EE7B7"/>
+                  <stop offset="1" stop-color="#60A5FA"/>
+                </linearGradient>
+              </defs>
+              <rect width="600" height="420" rx="18" fill="url(#lg)" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section services">
+      <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-sub">Strategy, design, and engineering for digital-first brands.</p>
+        <div class="cards">
+          <article class="card reveal">
+            <div class="card-icon">🎨</div>
+            <h3>Product Design</h3>
+            <p>User-centered interfaces and delightful experiences that drive engagement.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon">⚙️</div>
+            <h3>Web Development</h3>
+            <p>Fast, accessible, and scalable websites built with modern tools.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon">📈</div>
+            <h3>Growth & Analytics</h3>
+            <p>Data-driven optimization to increase conversions and retention.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="section work">
+      <div class="container">
+        <h2 class="section-title">Selected Work</h2>
+        <div class="portfolio-grid">
+          <figure class="portfolio-card reveal">
+            <figcaption>Project Alpha</figcaption>
+          </figure>
+          <figure class="portfolio-card reveal">
+            <figcaption>Brand Refresh</figcaption>
+          </figure>
+          <figure class="portfolio-card reveal">
+            <figcaption>E-commerce Build</figcaption>
+          </figure>
+          <figure class="portfolio-card reveal">
+            <figcaption>Mobile App</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testimonials">
+      <div class="container">
+        <h2 class="section-title">What clients say</h2>
+        <div class="testimonials-grid">
+          <blockquote class="testimonial reveal">“BrightWave redesigned our website and increased leads by 3x in 6 months.”<cite>— A. Morgan, CEO</cite></blockquote>
+          <blockquote class="testimonial reveal">“Skilled, communicative, and fast. Highly recommended.”<cite>— J. Rivera, Product Lead</cite></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="container contact-grid">
+        <div>
+          <h2 class="section-title">Start your project</h2>
+          <p>Tell us about your goals and we’ll get back with a plan and estimate.</p>
+        </div>
+        <form id="contactForm" class="contact-form" novalidate>
+          <label>
+            <span class="sr-only">Name</span>
+            <input type="text" name="name" placeholder="Your name" required>
+          </label>
+          <label>
+            <span class="sr-only">Email</span>
+            <input type="email" name="email" placeholder="Email" required>
+          </label>
+          <label>
+            <span class="sr-only">Message</span>
+            <textarea name="message" rows="4" placeholder="Project details"></textarea>
+          </label>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <div id="formMessage" class="form-message" aria-live="polite"></div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> BrightWave. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
